@@ -1,13 +1,176 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+:root{
+  --bgColor :#ffffff;
+  --lightBgColor: #24baef;
+  --bgTrans :rgba(36,186,239,0.6);
+  --fontColor : #000000;
+  --borderHeight:1px;
+  --secondColor:#949cb0;
+}
+body.dark {
+  --bgColor :#212529!important;
+  --fontColor : #ffffff !important  ;
+}
+body{
+  background-color: var(--bgColor);
+  color: var(--fontColor);
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+table ,th ,tr , td , form , .offcanvas{
+  background-color: var(--bgColor) !important;
+  color: var(--fontColor) !important;
+}
+.cart-price{
+  background-color: #0084ff;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.border-dash{
+  border-bottom: dashed 1px var(--fontColor);
+}
+.btn-close {
+  background: transparent !important;
+  font-size: 1.5rem;
+}
+.table-danger td {
+   color: rgb(73, 17, 17) !important;
+   background-color: #F8D7DA !important;
+}
+a{
+  color: var(--fontColor) !important;
+}
+.nav-link{
+  cursor: pointer;
+  color: var(--fontColor) !important;
+}
+.nav-link.active{
+font-weight: 700;
+position: relative;
+}
+.nav-link.active::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  width: 80%;
+  height: 5px;
+  background-color: var(--fontColor);
+  
+}
+.navbar-brand{
+  scale: 1.3;
+}
+.navbar-toggler i {
+  color: var(--fontColor);
+}
+.product{
+  overflow: hidden;
+}
+.product .btn{
+  transition:all 0.7s ;
+  opacity: 0;
+  transform: translateY(100%);
+}
+.product:hover .btn{
+  opacity: 1;
+  transform: translateY(0%);
+}
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #a407ff;
+}
+  .loader:before,
+  .loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+  }
+  .loader:after {
+    color: #0084ff;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+  }
+a.productLink{
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.page-item a{
+  color: #131722 !important;
+background-color: #9ad6ec;
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+.product img{
+transition: all 1s;
+}
+.product:hover img{
+  scale: 1.2;
+}
+.imgParent{
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .OwlCarouselCategory{
+    display: none;
+  }
+  .fixedMain{
+    display: none;
+  }
 }
